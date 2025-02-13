@@ -539,8 +539,8 @@ int gpsd_serial_open(struct gps_device_t *session)
                      strerror(errno), errno);
        }
        else{ 
-            	write(session->gpsdata.gps_fd, "#\rserialpassthrough 5 57600\r", 28);
-            	GPSD_LOG(LOG_PROG, &session->context->errout,
+                write(session->gpsdata.gps_fd, "@\rserialpassthrough 5 57600\r", 28);
+                GPSD_LOG(LOG_PROG, &session->context->errout,
                  "SER: file device open of %s succeeded fd %d\n",
                  session->gpsdata.dev.path,
                  session->gpsdata.gps_fd);
